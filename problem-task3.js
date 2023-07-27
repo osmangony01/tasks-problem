@@ -4,21 +4,24 @@ Task 3: Write a JavaScript program to find the most frequent element in an array
 
 */
 
-const arr = [3, 5, 2, 5, 3, 3, 1, 4, 5,5];
+const arr = [3, 5, 2, 5, 3, 3, 1, 4, 5, 5];
 
 function findMostFrequent() {
-    let count = {};
-    for (let item of arr) {
-        if (count.hasOwnProperty(`${item}`))
-            count[item] = count[item] + 1;
-        else
-            count[item] = 1;
+    let maxcount = 0;
+    let mostFreq;
+
+    for (let i = 0; i < arr.length; i++) {
+        let count = 0;
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] == arr[j])
+                count++;
+        }
+        if (maxcount < count) {
+            maxcount = count;
+            mostFreq = arr[i];
+        }
     }
-    const keys = Object.keys(count);
-    const values = Object.values(count);
-    const index = values.indexOf(Math.max(...values));
-    const findFreq = Number(keys[index]);
-    return findFreq;
+    return mostFreq;
 }
 
 const result = findMostFrequent();

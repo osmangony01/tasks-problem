@@ -12,7 +12,6 @@ function sumPositive(){
             total += arr[i];
         }
     }
-
     return total;
 }
 

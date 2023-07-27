@@ -8,7 +8,6 @@ const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"+"abcdefghijklmnopqrstuvwxyz"+"012345678
 const generatePasskey =() =>{
     const passLen = 10;
     let pass = "";
-
     for(let i=0;i<passLen; i++){
         const num = Math.floor(Math.random() * str.length+1);
         pass += str.charAt(num);
