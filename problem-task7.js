@@ -9,7 +9,7 @@ const romanValue = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000};
 const romanToInt = (str) =>{
     let result =0;
     let val = 0;
-    
+
     for(let i =0; i<str.length; i++){
         val = romanValue[str[i]];
         if(i<str.length-1){
@@ -24,7 +24,7 @@ const romanToInt = (str) =>{
     return result;
 }
 
-const romanStr = "MCMXCIV";
+const romanStr = "VIII";
 const res = romanToInt(romanStr);
 console.log(res);
 
